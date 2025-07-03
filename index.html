@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    .login-container, .dashboard {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container.active, .dashboard.active {
+      display: flex;
+    }
+    .login-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .login-box input {
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+      padding: 8px;
+    }
+    .login-box button {
+      padding: 8px 16px;
+      background: #4CAF50;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .dashboard img {
+      max-width: 90%;
+      border-radius: 10px;
+    }
+    .payment-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .payment-info p {
+      margin: 5px 0;
+      font-size: 1.2em;
+    }
+    video {
+      width: 300px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
 
+<div class="login-container active">
+  <div class="login-box">
+    <video src="https://files.catbox.moe/0wpi8r.mp4" autoplay muted loop></video>
+    <input type="text" id="username" placeholder="Username"/>
+    <input type="password" id="password" placeholder="Password"/>
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<div class="dashboard">
+  <div class="content">
+    <img src="https://files.catbox.moe/hfd11r.jpeg" alt="Dashboard Payment">
+    <div class="payment-info">
+      <p><strong>DANA:</strong> 082173490126</p>
+      <p><strong>OVO:</strong> 082173490126</p>
+      <p><strong>QRIS:</strong> <a href="https://wa.me/6282173490126" target="_blank">Klik di sini</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function login() {
+    const usn = document.getElementById('username').value;
+    const pw = document.getElementById('password').value;
+    
+    // Contoh sederhana, di dunia nyata harus validasi di server
+    if(usn && pw){
+      document.querySelector('.login-container').classList.remove('active');
+      document.querySelector('.dashboard').classList.add('active');
+    } else {
+      alert('Username dan password wajib diisi!');
+    }
+  }
+</script>
+
+</body>
+</html>
